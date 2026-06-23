@@ -205,11 +205,11 @@ function openPopup(src) {
   if (!popup || !img) return;
 
   img.src = src;
-  popup.classList.remove("hidden");
+  popup.classList.add("show");
 }
 
 function closePopup() {
   const popup = document.getElementById("imgPopup");
-  if (popup) popup.classList.add("hidden");
+  if (popup) popup.classList.remove("show");
 }
 
