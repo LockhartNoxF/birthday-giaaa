@@ -185,3 +185,15 @@ function toggleVoucher(el) {
     desc.classList.add("hidden");
   }
 }
+
+function openPopup(src) {
+  const popup = document.getElementById("imgPopup");
+  const img = document.getElementById("popupImg");
+
+  img.src = src;
+  popup.classList.remove("hidden");
+}
+
+function closePopup() {
+  document.getElementById("imgPopup").classList.add("hidden");
+}
