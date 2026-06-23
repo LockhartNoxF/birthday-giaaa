@@ -55,11 +55,9 @@ function start() {
     confetti();
     reveal();
 
-    // ✅ BARU AKTIFKAN POPUP SETELAH START
+    // ✅ AKTIFKAN POPUP SETELAH START
     setupGalleryPopup();
   });
-}
-  
 }
 
 /* LETTER */
@@ -189,8 +187,12 @@ function confetti() {
 function setupGalleryPopup() {
   const images = document.querySelectorAll(".popup-img");
 
+  if (!images.length) return;
+
   images.forEach(img => {
-    img.addEventListener("click", () => {
+    img.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       openPopup(img.src);
     });
   });
@@ -210,16 +212,4 @@ function closePopup() {
   const popup = document.getElementById("imgPopup");
   if (popup) popup.classList.add("hidden");
 }
-function setupGalleryPopup() {
-  const images = document.querySelectorAll(".popup-img");
 
-  if (!images.length) return;
-
-  images.forEach(img => {
-    img.addEventListener("click", (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      openPopup(img.src);
-    });
-  });
-}
