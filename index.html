@@ -145,10 +145,10 @@
     <h2>Memories 📸</h2>
 
     <div class="gallery">
-      <img src="images/album1.jpg" onclick="openPopup(this.src)">
-      <img src="images/album2.jpg" onclick="openPopup(this.src)">
-      <img src="images/album3.jpg" onclick="openPopup(this.src)">
-      <img src="images/album4.jpg" onclick="openPopup(this.src)">
+      <img src="images/album1.jpg" class="popup-img">
+      <img src="images/album2.jpg" class="popup-img">
+      <img src="images/album3.jpg" class="popup-img">
+      <img src="images/album4.jpg" class="popup-img">
     </div>
   </section>
 
@@ -316,9 +316,11 @@
 <script src="script.js"></script>
   
   <!-- IMAGE POPUP -->
-<div id="imgPopup" class="popup hidden" onclick="closePopup()">
-  <span class="close-btn" onclick="closePopup()">✖</span>
-  <img id="popupImg" src="">
+<div id="imgPopup" class="popup hidden">
+  <div class="popup-box">
+    <span class="close-btn" onclick="closePopup()">✖</span>
+    <img id="popupImg" src="">
+  </div>
 </div>
 </body>
 </html>
