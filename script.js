@@ -33,21 +33,36 @@ I love you today, tomorrow, and always.
 
 — Ilham 🤍`;
 
-function start() {
-  document.getElementById("intro").addEventListener("click", () => {
-    document.getElementById("intro").style.display = "none";
-    document.getElementById("main").classList.remove("hidden");
+/* INIT (FIX ERROR UTAMA) */
+document.addEventListener("DOMContentLoaded", start);
 
-    document.getElementById("bgmusic").play().catch(() => {});
+function start() {
+  const intro = document.getElementById("intro");
+  const music = document.getElementById("bgmusic");
+
+  if (!intro) return;
+
+  intro.addEventListener("click", () => {
+    intro.style.display = "none";
+
+    const main = document.getElementById("main");
+    if (main) main.classList.remove("hidden");
+
+    if (music) {
+      music.play().catch(() => {});
+    }
 
     confetti();
     reveal();
   });
+
+  setupGalleryPopup();
 }
 
 /* LETTER */
 function openLetter() {
   const el = document.getElementById("letter");
+  if (!el) return;
 
   if (el.innerHTML === "") {
     typeWriter(el, letterText);
@@ -58,87 +73,17 @@ function openLetter() {
 
 function typeWriter(el, text, i = 0) {
   el.classList.remove("hidden");
+
   if (i < text.length) {
     el.innerHTML += text.charAt(i);
     setTimeout(() => typeWriter(el, text, i + 1), 18);
   }
 }
 
-/* VOUCHER */
-function flip(el) {
-  el.innerText = "✔ Redeemed";
-  el.style.background = "#ff2e78";
-  el.style.color = "white";
-}
-
-/* QUIZ */
-function quiz(n) {
-  const r = document.getElementById("quizResult");
-
-  const answers = {
-    1: "A. Giaaa 🤍 (always correct)",
-    2: "C. Message from you 🤍",
-    3: "B. Gierta Natasya owns my heart ❤️",
-    4: "A. Impossible 😤 you're beautiful",
-    5: "C. My love for you 🤍"
-  };
-
-  r.innerText = answers[n];
-}
-
-/* FADE */
-function reveal() {
-  const items = document.querySelectorAll(".fade");
-
-  function check() {
-    items.forEach(el => {
-      if (el.getBoundingClientRect().top < window.innerHeight - 80) {
-        el.classList.add("show");
-      }
-    });
-  }
-
-  window.addEventListener("scroll", check);
-  check();
-}
-
-/* CONFETTI */
-function confetti() {
-  const canvas = document.getElementById("confetti");
-  const ctx = canvas.getContext("2d");
-
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-
-  const pieces = Array.from({length: 100}, () => ({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    r: Math.random() * 4 + 2
-  }));
-
-  function draw() {
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    ctx.fillStyle = "#ff2e78";
-
-    pieces.forEach(p => {
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
-      ctx.fill();
-      p.y += 1;
-      if (p.y > canvas.height) p.y = 0;
-    });
-
-    requestAnimationFrame(draw);
-  }
-
-  draw();
-}
-
-/* INIT */
-window.onload = start;
-
+/* QUIZ (FIX ID CHECK) */
 function quizAnswer(questionId, option) {
   const el = document.getElementById(questionId);
+  if (!el) return;
 
   const answers = {
     q1: {
@@ -173,27 +118,92 @@ function quizAnswer(questionId, option) {
     }
   };
 
-  el.innerText = answers[questionId][option];
+  el.innerText = answers?.[questionId]?.[option] || "Invalid answer";
 }
 
+/* VOUCHER */
 function toggleVoucher(el) {
   const desc = el.querySelector(".desc");
+  if (!desc) return;
 
-  if (desc.classList.contains("hidden")) {
-    desc.classList.remove("hidden");
-  } else {
-    desc.classList.add("hidden");
+  desc.classList.toggle("hidden");
+}
+
+/* FADE */
+function reveal() {
+  const items = document.querySelectorAll(".fade");
+
+  function check() {
+    items.forEach(el => {
+      if (el.getBoundingClientRect().top < window.innerHeight - 80) {
+        el.classList.add("show");
+      }
+    });
   }
+
+  window.addEventListener("scroll", check);
+  check();
+}
+
+/* CONFETTI */
+function confetti() {
+  const canvas = document.getElementById("confetti");
+  if (!canvas) return;
+
+  const ctx = canvas.getContext("2d");
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  const pieces = Array.from({ length: 100 }, () => ({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    r: Math.random() * 4 + 2
+  }));
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "#ff2e78";
+
+    pieces.forEach(p => {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fill();
+      p.y += 1;
+      if (p.y > canvas.height) p.y = 0;
+    });
+
+    requestAnimationFrame(draw);
+  }
+
+  draw();
+}
+
+/* =========================
+   POPUP GALLERY (FIXED SAFE)
+========================= */
+
+function setupGalleryPopup() {
+  const images = document.querySelectorAll(".popup-img");
+
+  images.forEach(img => {
+    img.addEventListener("click", () => {
+      openPopup(img.src);
+    });
+  });
 }
 
 function openPopup(src) {
   const popup = document.getElementById("imgPopup");
   const img = document.getElementById("popupImg");
 
+  if (!popup || !img) return;
+
   img.src = src;
   popup.classList.remove("hidden");
 }
 
 function closePopup() {
-  document.getElementById("imgPopup").classList.add("hidden");
+  const popup = document.getElementById("imgPopup");
+  if (popup) popup.classList.add("hidden");
 }
