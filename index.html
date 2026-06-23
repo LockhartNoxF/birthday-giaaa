@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Giaaa 🤍</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- CINEMATIC INTRO -->
+<div id="intro">
+  <div class="intro-box">
+    <h1>🎁 Happy Birthday Giaaa 🤍</h1>
+    <p>click anywhere to open your story</p>
+  </div>
+</div>
+
+<!-- MUSIC -->
+<audio id="bgmusic" loop>
+  <source src="music/sienna.mp3" type="audio/mp3">
+</audio>
+
+<canvas id="confetti"></canvas>
+
+<!-- MAIN -->
+<div id="main" class="hidden">
+
+  <!-- HERO -->
+  <section class="hero fade">
+    <h1>Happy Birthday, Giaaa 🤍</h1>
+    <p>this is not just a website, this is our memory</p>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="card fade">
+    <h2>About You</h2>
+    <p><b>Gierta Natasya</b> • Giaaa</p>
+    <p>24 June 2005 • 21 years old</p>
+    <p>The most beautiful soul I’ve ever known</p>
+  </section>
+
+  <!-- STORY -->
+  <section class="card fade">
+    <h2>Our Little Story</h2>
+
+    <p>
+      18 September 2025 — the day we met.
+    <p>  
+      Finally after looking at that damn phone all the time,
+      i finally meet you.
+      I still remember you… so pretty, so cute, so small.  
+      That first hug felt like home.
+    </p>
+
+    <br>
+
+    <p>
+      19 September 2025 — our first photobooth together.
+    </p>  
+      So happy that day… and I still smile thinking about it.
+    </p>
+
+    <br>
+
+    <p>
+      17 December 2025 — we meet again.  
+    <p>
+      And somehow… I fall for you even deeper.
+    </p>
+
+<br>
+
+    <p>
+      18 December 2025 — makan seblak surabaya.  
+    </p>
+      Setiap beli kesana, gapernah dapet yang aku mau seblaknya
+      So sad -ilham.
+    </p>    
+
+    <br>
+
+    <p>
+      19 December 2025 — photobooth lagi yeaayy.  
+    </p>
+      Nambah bagus fotonyaaa.
+      And you always so pretty.
+
+      Abis itu pulang lagi deh...
+    </p>
+
+    <br>
+
+    <p>
+      10 June 2026 — KETEMU LAGI YEAY.
+    </p>
+      Finally after a long long wait, i meet you again.  
+      Akhirnya ke Bandung. Kota keren itu :3
+
+      Foto di braga, fotonya segede koran.
+      Fotonyaa baguus, kamu nya cantik.
+    </p>
+
+    <br>
+
+    <p>
+      11 June 2026 — ke cafe kucing.  
+    </p>
+      Melihat Gierta bergelut dengan kucing gendut.
+
+      Photobooth lagii yeaay
+      Kamu selalu cantik.
+    </p>
+
+        <br>
+
+    <p>
+      12 June 2026 — bikin gantungan.  
+    </p>
+      Berlama lama membuat gantungan.
+
+      Photobooth lagiii
+      Gierta dengan hasil fotonya yang cantik.
+
+    </p>
+
+        <br>
+
+    <p>
+      13 June 2026 — pergi ke mall.  
+    </p>
+      Jalan jalann di mall.
+      Fotoin model di tangga.
+
+    </p>
+
+      SEDIH, PULANG...
+    </p>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="card fade">
+    <h2>Memories 📸</h2>
+
+    <div class="gallery">
+      <img src="images/album1.jpg" style="--r:-6deg">
+      <img src="images/album2.jpg" style="--r:4deg">
+      <img src="images/album3.jpg" style="--r:-3deg">
+      <img src="images/album4.jpg" style="--r:5deg">
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <!-- QUIZ -->
+<section class="card fade">
+  <h2>Mini Quiz 🎮</h2>
+
+  <!-- Q1 -->
+  <div class="quiz-block">
+    <p>1. Who is the prettiest girl in the world?</p>
+    <button onclick="quizAnswer('q1','A')">A. Giaaa</button>
+    <button onclick="quizAnswer('q1','B')">B. Gierta Natasya</button>
+    <button onclick="quizAnswer('q1','C')">C. My Baby</button>
+    <button onclick="quizAnswer('q1','D')">D. All of the above</button>
+    <p id="q1" class="quiz-result"></p>
+  </div>
+
+  <!-- Q2 -->
+  <div class="quiz-block">
+    <p>2. What is Ilham's favorite notification?</p>
+    <button onclick="quizAnswer('q2','A')">A. Games</button>
+    <button onclick="quizAnswer('q2','B')">B. Mbanking</button>
+    <button onclick="quizAnswer('q2','C')">C. Message from you</button>
+    <button onclick="quizAnswer('q2','D')">D. Shopee</button>
+    <p id="q2" class="quiz-result"></p>
+  </div>
+
+  <!-- Q3 -->
+  <div class="quiz-block">
+    <p>3. Who owns Ilham's heart?</p>
+    <button onclick="quizAnswer('q3','A')">A. Nobody</button>
+    <button onclick="quizAnswer('q3','B')">B. Gierta Natasya</button>
+    <button onclick="quizAnswer('q3','C')">C. Games</button>
+    <button onclick="quizAnswer('q3','D')">D. hsy..</button>
+    <p id="q3" class="quiz-result"></p>
+  </div>
+
+  <!-- Q4 -->
+  <div class="quiz-block">
+    <p>4. If she says "I'm ugly", what is correct?</p>
+    <button onclick="quizAnswer('q4','A')">A. Impossible 😤</button>
+    <button onclick="quizAnswer('q4','B')">B. You are beautiful</button>
+    <button onclick="quizAnswer('q4','C')">C. You are adorable</button>
+    <button onclick="quizAnswer('q4','D')">D. All of the above</button>
+    <p id="q4" class="quiz-result"></p>
+  </div>
+
+  <!-- Q5 -->
+  <div class="quiz-block">
+    <p>5. Which one is stronger?</p>
+    <button onclick="quizAnswer('q5','A')">A. Gravity</button>
+    <button onclick="quizAnswer('q5','B')">B. Wi-Fi signal</button>
+    <button onclick="quizAnswer('q5','C')">C. Ilham's love for Gierta ❤️</button>
+    <button onclick="quizAnswer('q5','D')">D. Coffee</button>
+    <p id="q5" class="quiz-result"></p>
+  </div>
+
+</section>
+  <!-- LOVE LIST -->
+  <section class="card fade">
+    <h2>10 Things I Love About You</h2>
+    <ul>
+      <li>I love your smile</li>
+      <li>I love your style</li>
+      <li>I love how expressive you are</li>
+      <li>I love your jealous moments</li>
+      <li>I love your excitement</li>
+      <li>I love your humor</li>
+      <li>I love your hair</li>
+      <li>I love your confidence</li>
+      <li>I love your stories</li>
+      <li>I’m so in love with you</li>
+    </ul>
+  </section>
+
+  <!-- BUCKET LIST -->
+  <section class="card fade">
+    <h2>Bucket List</h2>
+    <ul>
+      <li>Matching outfits & cute mirror selfies together 👕📸✨</li>
+      <li>Cooking together 🍳🤍</li>
+      <li>Travel together and get lost in a new place ✈️🗺️</li>
+      <li>Romantic dinner 🕯️🍷❤️</li>
+      <li>Build a photo album full of our memories 📸📖💞</li>
+      <li>Late night café dates with deep talks ☕🌙💬</li>
+      <li>Watch sunrise & sunset together 🌅🌇🤍</li>
+      <li>Movie night under one blanket 🎬🫂🍿</li>
+      <li>Handwritten love letters for each other 💌✍️🤍</li>
+      <li>Grow together through every phase of life 🌱💞</li>
+      <li>Keep choosing each other, even on hard days 🫶💫</li>
+      <li>And one day… get married 🤍💍✨</li>
+    </ul>
+  </section>
+
+  <!-- VOUCHERS -->
+<section class="card fade">
+  <h2>Love Vouchers 🎁</h2>
+
+  <div class="vouchers">
+
+    <div class="voucher" onclick="toggleVoucher(this)">
+      🤍 Unlimited Hug Voucher
+      <p class="desc hidden">
+        Valid forever. No expiration date.  
+        You can redeem unlimited hugs anytime 🤍
+      </p>
+    </div>
+
+    <div class="voucher" onclick="toggleVoucher(this)">
+      🍦 Ice Cream Date Voucher
+      <p class="desc hidden">
+        Redeem for a sweet ice cream date together 🍦💖
+      </p>
+    </div>
+
+    <div class="voucher" onclick="toggleVoucher(this)">
+      💬 One Request Voucher
+      <p class="desc hidden">
+        You can ask for one thing. Anything. No refusal allowed 😤🤍
+      </p>
+    </div>
+
+    <div class="voucher" onclick="toggleVoucher(this)">
+      😌 No Angry Mode Voucher
+      <p class="desc hidden">
+        Immediate peace agreement + hugs until you smile again 🤍
+      </p>
+    </div>
+
+    <div class="voucher" onclick="toggleVoucher(this)">
+      🫶 Headpat Unlimited
+      <p class="desc hidden">
+        Unlimited headpats whenever you feel tired or cute 🫶
+      </p>
+    </div>
+
+    <div class="voucher" onclick="toggleVoucher(this)">
+      💍 Lifetime Love Card
+      <p class="desc hidden">
+        Permanent membership: love, care, and annoying affection forever 🤍
+      </p>
+    </div>
+
+  </div>
+</section>
+
+  <!-- LETTER -->
+  <section class="card fade">
+    <h2>Letter For You 💌</h2>
+
+    <div class="envelope" onclick="openLetter()">
+      💌 Open your letter
+    </div>
+
+    <p id="letter" class="letter-box hidden"></p>
+  </section>
+
+  <footer>
+    Made with love 🤍
+  </footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
